@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../../styles/qrcode.css";
-import { requestClient } from "../../utils/request-client";
+import axios from "axios";
 import { useHistory } from "react-router-dom";
 import "antd/dist/antd.css";
 import { message } from "antd";
@@ -14,13 +14,13 @@ function QrCode() {
   const history = useHistory();
   // Updating the input word when user
   // click on the generate button
-  function handleClick() {
+  async function handleClick() {
     setWord(authnumber);
     try {
       const qrData = {
         authnumber,
       };
-      requestClient.post("/drug/nafdac", qrData);
+      await axios.post("http://localhost:5000/drug/nafdac", qrData);
       message.success("Qr code generated");
     } catch (err) {
       console.error(err);

@@ -12,6 +12,7 @@ import UserDrugs from "./components/drugs/userDrug";
 import Navbar from "./components/layout/Navbar";
 import AuthContext from "./context/AuthContext";
 import Search from "./components/drugs/search";
+import UserSearch from "./components/drugs/userSearch";
 import { EditDrug } from "./components/drugs/editDrug";
 
 function Router() {
@@ -25,6 +26,9 @@ function Router() {
         </Route>
         <Route path="/search">
           <Search />
+        </Route>
+        <Route path="/usersearch">
+          <UserSearch />
         </Route>
         {loggedIn === false && (
           <>

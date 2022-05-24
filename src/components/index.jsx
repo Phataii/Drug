@@ -7,7 +7,7 @@ export default function Index() {
         <button className="bg-orange-400 h-16 w-48 mt-5 italic uppercase text-red-500 text-xl">
           <span className="font-bold text-white">
             {/* <a href=""></a> */}
-            <Link to="/search">Check Drug</Link>
+            <Link to="/usersearch">Check Drug</Link>
           </span>
         </button>
       </div>
